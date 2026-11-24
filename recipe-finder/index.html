@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recipe Finder App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-content">
+      <h1>🍳 Recipe Finder</h1>
+      <button id="btn-show-favorites" class="btn-fav-nav">
+        ❤️ Favorit (<span id="fav-count">0</span>)
+      </button>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Bagian Pencarian & Filter -->
+    <section class="controls">
+      <input
+        type="text"
+        id="search-input"
+        placeholder="Cari nama resep (misal: Pizza, Pasta, Chicken)..."
+      />
+      <select id="filter-meal">
+        <option value="all">Semua Kategori (Meal Type)</option>
+        <option value="Breakfast">Breakfast</option>
+        <option value="Lunch">Lunch</option>
+        <option value="Dinner">Dinner</option>
+        <option value="Snack">Snack</option>
+        <option value="Dessert">Dessert</option>
+      </select>
+      <button id="btn-reset" class="btn-secondary">Reset</button>
+    </section>
+
+    <!-- Status Loading / Pesan -->
+    <p id="status-message" class="status-msg">Memuat resep...</p>
+
+    <!-- Daftar Resep -->
+    <section id="recipe-list" class="recipe-grid"></section>
+  </main>
+
+  <!-- Modal Detail Resep -->
+  <div id="recipe-modal" class="modal hidden">
+    <div class="modal-content">
+      <button id="close-modal" class="close-btn">&times;</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
